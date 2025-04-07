@@ -13,7 +13,6 @@ read EMAIL
 check_error() {
   if [ $? -ne 0 ]; then
     echo "❌ Error occurred at: $1. Exiting."
-    exit 1
   fi
 }
 
