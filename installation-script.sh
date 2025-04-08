@@ -82,7 +82,7 @@ if [ -d "./prosody-plugins" ]; then
 fi
 
 # Call prosody configuration modification
-bash ./config-modification-script.sh
+DOMAIN="$DOMAIN" bash ./config-modification-script.sh
 
 # Restart services to apply changes
 echo "🔁 Restarting services..."

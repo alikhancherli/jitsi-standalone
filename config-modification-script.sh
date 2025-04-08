@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Modify the jitsitest2.simorgh34000.com.cfg.lua to match stage-jitsi.simorgh34000.com.cfg.lua
 
 echo "📝 Modifying Prosody config ..."
