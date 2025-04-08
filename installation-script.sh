@@ -66,20 +66,23 @@ check_error "installing Jitsi Meet"
 if [ -f "./all.css" ]; then
   echo "🎨 Copying all.css..."
   sudo cp ./all.css /usr/share/jitsi-meet/css/
-  check_error "copying all.css"
+  check_error "[copying all.css]"
 fi
 
 if [ -d "./fonts" ]; then
   echo "🖋️ Copying fonts directory..."
   sudo cp -r ./fonts /usr/share/jitsi-meet/
-  check_error "copying fonts"
+  check_error "[copying fonts]"
 fi
 
 if [ -d "./prosody-plugins" ]; then
   echo "🖋️ Copying fonts directory..."
   sudo cp -r ./prosody-plugins /usr/share/jitsi-meet/
-  check_error "copying fonts"
+  check_error "[copying the prosody plugins]"
 fi
+
+# Call prosody configuration modification
+bash ./config-modification-script.sh
 
 # Restart services to apply changes
 echo "🔁 Restarting services..."
