@@ -199,5 +199,3 @@ Component "metadata.${DOMAIN}" "room_metadata_component"
     muc_component = "conference.${DOMAIN}"
     breakout_rooms_component = "breakout.${DOMAIN}"
 EOF
-
-check_error "modifying jitsitest2.simorgh34000.com.cfg.lua"

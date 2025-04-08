@@ -83,6 +83,14 @@ fi
 
 # Call prosody configuration modification
 DOMAIN="$DOMAIN" bash ./config-modification-script.sh
+check_error "[Prosody configuration (.lua file) ...]"
+
+# Copying the SSL files
+if [ -d "./certs" ] && [ "$(ls -A ./certs)" ]; then
+  echo "🖋️ Copying SSL files..."
+  sudo cp -r ./certs/* /etc/ssl/
+  check_error "[copying the SSL]"
+fi
 
 # Restart services to apply changes
 echo "🔁 Restarting services..."
