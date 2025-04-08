@@ -75,6 +75,12 @@ if [ -d "./fonts" ]; then
   check_error "copying fonts"
 fi
 
+if [ -d "./prosody-plugins" ]; then
+  echo "🖋️ Copying fonts directory..."
+  sudo cp -r ./prosody-plugins /usr/share/jitsi-meet/
+  check_error "copying fonts"
+fi
+
 # Restart services to apply changes
 echo "🔁 Restarting services..."
 sudo systemctl restart prosody
