@@ -13,7 +13,7 @@ read APPSECRET
 echo "Enter the api_prefix for jwt (it's for room events end-points. see more : https://github.com/jitsi-contrib/prosody-plugins/tree/main/event_sync) : "
 read APIPREFIX
 
-sudo tee /etc/prosody/conf.d/jitsitest2.simorgh34000.com.cfg.lua > /dev/null <<EOF
+sudo tee /etc/prosody/conf.d/${DOMAIN}.cfg.lua > /dev/null <<EOF
 -- We need this for prosody 13.0
 component_admins_as_room_owners = true
 

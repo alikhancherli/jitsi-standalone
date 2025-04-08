@@ -6,8 +6,7 @@ set -o pipefail
 # Prompt user for domain and email
 echo "Enter your domain (e.g., meet.example.com):"
 read DOMAIN
-echo "Enter your email for Let's Encrypt notifications:"
-read EMAIL
+
 
 # Function to check for errors
 check_error() {
@@ -82,7 +81,7 @@ if [ -d "./prosody-plugins" ]; then
 fi
 
 # Call prosody configuration modification
-DOMAIN="$DOMAIN" bash ./config-modification-script.sh
+DOMAIN="$DOMAIN" bash ./prosody-config.sh
 check_error "[Prosody configuration (.lua file) ...]"
 
 # Copying the SSL files
